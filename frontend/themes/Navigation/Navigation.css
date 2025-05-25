@@ -1,0 +1,25 @@
+/* Define your styles here */
+
+.overview-main-layout {
+    grid-gap: 1.5rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(19rem, 1fr));
+}
+
+.overview-tag-grey {
+    color: #4F5C78 !important;
+    font-weight: 400;
+    background-color: #F4F8FE;
+}
+
+.overview-tag-blue {
+    color: #4F5C78 !important;
+    font-weight: 400;
+    background-color: #E9FEFE;
+}
+
+.overview-tag-green {
+    color: #4F5C78 !important;
+    font-weight: 400;
+    background-color: #EFFEEF;
+}

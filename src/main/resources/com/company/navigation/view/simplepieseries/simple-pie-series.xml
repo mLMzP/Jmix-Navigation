@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<view xmlns="http://jmix.io/schema/flowui/view"
+      xmlns:charts="http://jmix.io/schema/charts/ui"
+      title="msg://simplePieSeries.title">
+    <data readOnly="true">
+        <collection id="countryLitresDc"
+                    class="com.company.navigation.entity.CountryLitres"
+                    fetchPlan="_local">
+            <loader id="countryLitresDl" readOnly="true">
+                <query>
+                    <![CDATA[select e from CountryLitres e]]>
+                </query>
+            </loader>
+        </collection>
+    </data>
+    <facets>
+        <dataLoadCoordinator auto="true"/>
+    </facets>
+    <layout>
+        <tabSheet id="tabSheet" width="100%" height="100%">
+            <tab id="tab1" label="Chart data">
+                <dataGrid id="countryLitresesDataGrid"
+                          dataContainer="countryLitresDc"
+                          width="100%"
+                          height="100%"
+                          columnReorderingAllowed="true"
+                          minHeight="20em">
+                    <actions/>
+                    <columns>
+                        <column property="country"/>
+                        <column property="litres"/>
+                    </columns>
+                </dataGrid>
+            </tab>
+            <tab id="tab2" label="Simple chart">
+                <charts:chart id="simpleChart" width="100%" height="100%" minHeight="30em">
+                    <charts:title text="Liters" subtext="By countries"/>
+                    <charts:legend top="0"/>
+                    <charts:tooltip trigger="ITEM"/>
+
+                    <charts:dataSet>
+                        <charts:source dataContainer="countryLitresDc"
+                                       categoryField="country" valueFields="litres"/>
+                    </charts:dataSet>
+
+                    <charts:series>
+                        <charts:pie name="Liters">
+                            <charts:label formatter="{b}: {d}%"/>
+                        </charts:pie>
+                    </charts:series>
+                </charts:chart>
+            </tab>
+        </tabSheet>
+    </layout>
+</view>

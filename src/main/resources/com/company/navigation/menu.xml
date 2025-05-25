@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<menu-config xmlns="http://jmix.io/schema/flowui/menu">
+
+    <menu id="application" title="msg://com.company.navigation/menu.application.title" opened="true">
+        <item view="User.list" title="msg://com.company.navigation.view.user/UserListView.title"/>
+    </menu>
+    <menu id="series" title="Series">
+        <menu id="line" title="Line series">
+            <item view="SimpleLineSeries"
+                  title="msg://com.company.navigation.view.simplelineseries/simpleLineSeries.title"/>
+            <item view="StackedAreaSeries"
+                  title="msg://com.company.navigation.view.stackedareaseries/stackedAreaSeries.title"/>
+        </menu>
+        <menu id="bar" title="Bar series">
+
+            <item view="SimpleBarSeries"
+                  title="msg://com.company.navigation.view.simplebarseries/simpleBarSeries.title"/>
+            <item view="StackedBarSeries"
+                  title="msg://com.company.navigation.view.stackedbarseries/stackedBarSeries.title"/>
+        </menu>
+        <menu id="pie" title="Pie series">
+            <item view="SimplePieSeries" title="msg://com.company.navigation.view.simplepieseries/simplePieSeries.title"/>
+            <item view="DonutPieSeries" title="msg://com.company.navigation.view.donutpieseries/donutPieSeries.title"/>
+        </menu>
+    </menu>
+
+</menu-config>
