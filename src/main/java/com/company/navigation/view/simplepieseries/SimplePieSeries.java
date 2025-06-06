@@ -23,20 +23,6 @@ public class SimplePieSeries extends StandardView {
     @Autowired
     private RouteSupport routeSupport;
 
-    @Subscribe
-    public void onQueryParametersChange(final QueryParametersChangeEvent event) {
-        QueryParameters queryParameters = event.getQueryParameters();
-        Map<String, List<String>> parameters = queryParameters.getParameters();
-        if (parameters.isEmpty()) {
-            return;
-        }
-
-        String tabIndex = parameters.get("tabIndex").stream().findAny().orElse("0");
-        int index = Integer.parseInt(tabIndex);
-
-        tabSheet.setSelectedIndex(index);
-    }
-
     @Subscribe("tabSheet")
     public void onTabSheetSelectedChange(final JmixTabSheet.SelectedChangeEvent event) {
         String selectedIndex = String.valueOf(tabSheet.getSelectedIndex());
